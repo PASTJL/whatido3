@@ -1,0 +1,6 @@
+/target/*
+/lance*
+/.settings
+/.classpath
+/docs/*
+/manuals/*.odt

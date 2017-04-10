@@ -1,0 +1,14 @@
+.root{
+                -fx-background-color: rgba(235, 235, 235, 0.5); 
+               
+        }
+.label{
+	-fx-text-fill: rgb(255,0,0);
+	-fx-color : rgb(255,0,0);
+	-fx-font-size : 20 pt;
+}
+#grPane , #grPane2  {
+	
+	 -fx-border-width :2pt ;
+	  -fx-border-color: rgb(0,0,0);
+}
