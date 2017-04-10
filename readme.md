@@ -7,11 +7,12 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170216;16525459">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170410;18582512">
-	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
+	<META NAME="CHANGED" CONTENT="20170410;19125129">
 	<STYLE TYPE="text/css">
-	
+	<!--
+		H2.cjk { font-family: "SimSun" }
+		H2.ctl { font-family: "Lucida Sans" }
+	-->
 	</STYLE>
 </HEAD>
 <BODY LANG="fr-FR" DIR="LTR">
@@ -42,12 +43,12 @@ document how to realize a complete mapping if this software does not
 work correctly with your Micro / OS / keyboard. There may be
 deviations from the Windows / AZERTY mapping .</SPAN> 
 </P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm"><BR>
+<P STYLE="margin-bottom: 0cm"><BR>
 </P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm">This software is based on
-the Library <B>JNativeHook</B> available at Github site :
-<A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm"><BR>
+<P STYLE="margin-bottom: 0cm"><SPAN LANG="en-GB">This software is
+based on the Library </SPAN><SPAN LANG="en-GB"><B>JNativeHook</B></SPAN><SPAN LANG="en-GB">
+available at Github site : <A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></SPAN></P>
+<P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm">The binary code is avaible
 on Maven Repo, I use the Version 2.1.0 : 

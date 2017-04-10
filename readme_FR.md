@@ -7,11 +7,12 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170408;9383251">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170410;19004485">
-	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
+	<META NAME="CHANGED" CONTENT="20170410;19133770">
 	<STYLE TYPE="text/css">
-	
+	<!--
+		H2.cjk { font-family: "SimSun" }
+		H2.ctl { font-family: "Lucida Sans" }
+	-->
 	</STYLE>
 </HEAD>
 <BODY LANG="en-GB" DIR="LTR">
@@ -34,7 +35,7 @@ r&eacute;aliser un mapping complet si ce logiciel ne fonctionne pas
 correctement avec votre micro/os/clavier. Il se peut qu'il y ait des
 &eacute;carts avec le mapping Windows/AZERTY .</P>
 <P STYLE="margin-bottom: 0cm">Cette application est bas&eacute;e sur
-la Biblioth&egrave;que  <B>JNativeHook</B>  disponible sur le site 
+la Biblioth&egrave;que <B>JNativeHook</B> disponible sur le site
 Github : <A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
