@@ -7,14 +7,11 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170408;9383251">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170408;13422045">
+	<META NAME="CHANGED" CONTENT="20170410;19004485">
+	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
 	<STYLE TYPE="text/css">
-	<!--
-		H2.western { font-family: "Albany", sans-serif; font-size: 14pt; font-style: italic }
-		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
-		H2.ctl { font-family: "Arial Unicode MS"; font-size: 14pt; font-style: italic }
-	-->
+	
 	</STYLE>
 </HEAD>
 <BODY LANG="en-GB" DIR="LTR">
@@ -36,6 +33,15 @@ clavier &agrave; faire), voir dans les annexes de ce document comment
 r&eacute;aliser un mapping complet si ce logiciel ne fonctionne pas
 correctement avec votre micro/os/clavier. Il se peut qu'il y ait des
 &eacute;carts avec le mapping Windows/AZERTY .</P>
+<P STYLE="margin-bottom: 0cm">Cette application est bas&eacute;e sur
+la Biblioth&egrave;que  <B>JNativeHook</B>  disponible sur le site 
+Github : <A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Le code binaire est disponible dans le
+d&eacute;pot Maven , j'ai utilis&eacute; la Version 2.1.0 : 
+</P>
+<P><A HREF="https://mvnrepository.com/artifact/com.1stleg/jnativehook/2.1.0">https://mvnrepository.com/artifact/com.1stleg/jnativehook/2.1.0</A></P>
 <H2 CLASS="western">Un aper&ccedil;u du produit sur ce document</H2>
 <P>L'&eacute;cran de lancement qui sera expliqu&eacute; en d&eacute;tail
 plus loin dans le document.</P>
@@ -46,9 +52,9 @@ plus loin dans le document.</P>
 <P ALIGN=CENTER><IMG SRC="readme_FR_md_m12bd0ad0.jpg" NAME="images2" ALIGN=BOTTOM WIDTH=642 HEIGHT=366 BORDER=0></P>
 <P LANG="fr-FR">On voit un rond bleu sur la touche Print-Screen quand
 j'ai fait la copie d'&eacute;cran&nbsp;!</P>
-<P><SPAN LANG="fr-FR">On peut choisir l'affichage ou non du clavier,
-on peut activer le son qui d&eacute;crit les actions faites sur la
-souris et le clavier.</SPAN></P>
+<P LANG="fr-FR">On peut choisir l'affichage ou non du clavier, on
+peut activer le son qui d&eacute;crit les actions faites sur la
+souris et le clavier.</P>
 <P LANG="fr-FR">Pour ce qui concerne la souris, on a 4 tailles au
 choix ( Large, Medium, Small, Tiny) et le fait d&rsquo;&ecirc;tre
 mobile pour les 3 plus petites tailles et d'&ecirc;tre fixe pour les
@@ -97,17 +103,17 @@ de <B>Oracle</B>&nbsp;:</P>
 <P><A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</A><IMG SRC="readme_FR_md_m464ab979.jpg" NAME="images3" ALIGN=BOTTOM WIDTH=465 HEIGHT=214 BORDER=0></P>
 <P>Cocher l'acceptation de licence.</P>
 <P><IMG SRC="readme_FR_md_m7cfa0b96.jpg" NAME="images4" ALIGN=BOTTOM WIDTH=571 HEIGHT=358 BORDER=0></P>
-<P><SPAN LANG="fr-FR">Choisir le t&eacute;l&eacute;chargement de la
-version 32 bits ( i586) </SPAN>
+<P LANG="fr-FR">Choisir le t&eacute;l&eacute;chargement de la version
+32 bits ( i586) 
 </P>
 <P><SPAN LANG="fr-FR">Apr&egrave;s t&eacute;l&eacute;chargement, il
 faudra lancer le </SPAN><SPAN LANG="fr-FR"><B>fichier .exe
-correspondant en mode administrateur</B></SPAN><SPAN LANG="fr-FR"> (
+correspondant en mode administrateur</B></SPAN> <SPAN LANG="fr-FR">(
 clic droit sur le fichier, et choisir lancement en mode
 administrateur).</SPAN></P>
-<P><SPAN LANG="fr-FR">Une fois install&eacute;, vous devez pouvoir
-voir votre JRE comme montr&eacute; ci-dessous&nbsp;:</SPAN></P>
-<P ALIGN=CENTER><IMG SRC="readme_FR_md_609d63a0.jpg" NAME="images5" WIDTH=645 HEIGHT=408 BORDER=0></P>
+<P LANG="fr-FR">Une fois install&eacute;, vous devez pouvoir voir
+votre JRE comme montr&eacute; ci-dessous&nbsp;:</P>
+<P ALIGN=CENTER><IMG SRC="readme_FR_md_609d63a0.jpg" NAME="images5" ALIGN=BOTTOM WIDTH=645 HEIGHT=408 BORDER=0></P>
 <P><BR><BR>
 </P>
 <H2 CLASS="western">Installation de Whatido</H2>
