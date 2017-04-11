@@ -56,6 +56,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 	public static boolean boolRed1 = false;
 	public static boolean boolRed2 = false;
 	public HashMap<Integer, ImageView> hmPressed = new HashMap<Integer, ImageView>();
+	public boolean shiftPressed=false;
 
 	public Stage getPrimaryStage() {
 		return primaryStage;
@@ -229,15 +230,18 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		// on verifie que la touche n'est pas shift, ctrl ou AltGr
 		switch (code) {
 		case 29:
-
+			
 			// Ctrl G mod =2 CtrlD mod=32
 		case 42:
 			// shift G
+			if( code == 42 || code == 3638) shiftPressed=true;  
 		case 3638:
 			// shift D
+			if( code == 42 || code == 3638) shiftPressed=true; 
 		case 56:
 			// Alt Modif 8 56_8
 			// Alt Gr modif 130 56_130
+			
 
 			String XY = this.propsKeyboardPosition.getProperty(Integer.toString(code) + "_" + modifiers);
 			if (null != XY && XY.matches(pat)) {
@@ -268,7 +272,8 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 							root.getChildren().remove(ivRed2);
 							root.getChildren().add(ivRed2);
 							hmPressed.put(code, ivRed2);
-							if (modifiers >= 128 && modifiers < 140) {
+							System.out.println("shiftPressed = "+shiftPressed);
+							if (modifiers >= 128 && modifiers < 140 && !shiftPressed ) {
 								Integer in = getKeyFromValue(hmPressed, ivRed1);
 								hmPressed.remove(in);
 								root.getChildren().remove(ivRed1);
@@ -326,6 +331,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			@Override
 			public void run() {
 				int code = arg0.getKeyCode();
+				if (code == 42 || code == 3638) shiftPressed=false;
 
 				if (hmPressed.containsKey(code)) {
 
