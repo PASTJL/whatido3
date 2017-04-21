@@ -48,14 +48,13 @@ public class Main extends Application {
 	public static Properties hmWheel = new Properties();
 	public static Properties props = new Properties();
 	public static Properties propsTrad = new Properties();
-	public static Properties propsCtrlMod=new Properties();
-	public static Properties propsCtrlMod_INV=new Properties();
-	
-	
+	public static Properties propsCtrlMod = new Properties();
+	public static Properties propsCtrlMod_INV = new Properties();
+
 	public static String osCurrent = "Windows";
 	public static String language = "FR_fr";
-	public  static String repCfg ="";
-	
+	public static String repCfg = "";
+
 	public static double screenWidth = 1920;
 	public static double screenHeigh = 1080;
 	public static int TFWIDTH = 100;
@@ -97,6 +96,11 @@ public class Main extends Application {
 	public final TextField tfLatency = new TextField();
 	public final CheckBox withSounds = new CheckBox(" With Sounds ?");
 	public final CheckBox withImgKeyboard = new CheckBox(" With Keyboard image ?");
+	public final ComboBox<String> cbSizeKb = new ComboBox<String>();
+	//public final CheckBox withImgKeyboardSmall = new CheckBox("Small size Keyboard ?");
+	public static double kbScale = 1;
+	public static String sizeKb = "Normal";
+
 	protected void majStatics() {
 		// TODO Auto-generated method stub
 		osCurrent = this.taOs.getText();
@@ -113,12 +117,13 @@ public class Main extends Application {
 		shutdownKey[2] = tfShutdownKey3.getText();
 		screenWidth = Double.valueOf(tfSizeWidth.getText());
 		screenHeigh = Double.valueOf(tfSizeHeigh.getText());
-		language= cbLang.getValue();
+		language = cbLang.getValue();
 		if (this.withSounds.isSelected()) {
 			boolSounds = true;
 		} else {
 			boolSounds = false;
 		}
+		
 		if (this.withImgKeyboard.isSelected()) {
 			boolKeyboard = true;
 		} else {
@@ -140,9 +145,8 @@ public class Main extends Application {
 		props.setProperty("shutdownKey3", shutdownKey[2]);
 		props.setProperty("boolSounds", Boolean.toString(boolSounds));
 		props.setProperty("boolKeyboard", Boolean.toString(boolKeyboard));
-		try (FileInputStream in = new FileInputStream(
-				new File(rootProject + File.separator + "config" + File.separator + "keyboards"+
-		File.separator+language+"_Trad.properties"));) {
+		try (FileInputStream in = new FileInputStream(new File(rootProject + File.separator + "config" + File.separator
+				+ "keyboards" + File.separator + language + "_Trad.properties"));) {
 
 			propsTrad.load(in);
 		} catch (FileNotFoundException e) {
@@ -203,9 +207,9 @@ public class Main extends Application {
 	}
 
 	public void start(final Stage primaryStage) {
-		primaryStage.setTitle(version + " ; keyboard="+keyboard+" ; os="+osCurrent);
+		primaryStage.setTitle(version + " ; keyboard=" + keyboard + " ; os=" + osCurrent);
 		// primaryStage.initStyle(StageStyle.TRANSPARENT);
-		repCfg = rootProject+File.separator+"config"+File.separator;
+		repCfg = rootProject + File.separator + "config" + File.separator;
 		AnchorPane root = new AnchorPane();
 		Scene scene = new Scene(root, 700, 450);
 		Button btnRun = new Button();
@@ -220,7 +224,7 @@ public class Main extends Application {
 				// Maj Variables statics
 				majStatics();
 				if (!withImgKeyboard.isSelected()) {
-					Platform.runLater(new Runnable (){
+					Platform.runLater(new Runnable() {
 
 						@Override
 						public void run() {
@@ -229,15 +233,13 @@ public class Main extends Application {
 							Stage stage = new Stage(StageStyle.TRANSPARENT);
 							new MyTracker(stage);
 						}
-						
+
 					});
-				}
-				else
-				{
+				} else {
 					// lancement de 2 threads:
 					// - un thread de tracking souris
 					// - un thread de tracking clavier
-					Platform.runLater(new Runnable (){
+					Platform.runLater(new Runnable() {
 
 						@Override
 						public void run() {
@@ -246,9 +248,9 @@ public class Main extends Application {
 							Stage stage = new Stage(StageStyle.TRANSPARENT);
 							new MyTracker(stage);
 						}
-						
+
 					});
-					Platform.runLater(new Runnable (){
+					Platform.runLater(new Runnable() {
 
 						@Override
 						public void run() {
@@ -257,7 +259,7 @@ public class Main extends Application {
 							Stage stage = new Stage(StageStyle.TRANSPARENT);
 							new MyKbTracker(stage);
 						}
-						
+
 					});
 				}
 
@@ -269,17 +271,18 @@ public class Main extends Application {
 				System.exit(0);
 			}
 		});
-		
+
 		Button btnMap = new Button();
 		btnMap.setText("Adjust Mapping");
-		btnMap.setTooltip(new Tooltip("For modifying few keys and mouse events\n Otherwise modify text file in config folder"));
+		btnMap.setTooltip(
+				new Tooltip("For modifying few keys and mouse events\n Otherwise modify text file in config folder"));
 		btnMap.setOnAction(new EventHandler<ActionEvent>() {
 
 			public void handle(ActionEvent event) {
 				System.out.println("Mapping Keyboard and Mouse");
 				majStatics();
 				Stage stage = new Stage();
-				new AdjustMapping(stage,primaryStage);
+				new AdjustMapping(stage, primaryStage);
 			}
 		});
 		// Hbox OS et Clavier et lang
@@ -297,33 +300,31 @@ public class Main extends Application {
 
 		Label lbKb = new Label("     Keyboard:");
 		lbKb.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
-		ObservableList<String> options =  getOptions("keyboards");
-		
+		ObservableList<String> options = getOptions("keyboards");
+
 		cbKb.setItems(options);
 		cbKb.getSelectionModel().select("AZERTY");
 		propsTrad.clear();
-		try (InputStream in = new FileInputStream(rootProject+File.separator+"config"+File.separator+"keyboards"+File.separator+ 
-				"FR_fr_Trad.properties");) {
+		try (InputStream in = new FileInputStream(rootProject + File.separator + "config" + File.separator + "keyboards"
+				+ File.separator + "FR_fr_Trad.properties");) {
 			propsTrad.clear();
 			propsTrad.load(in);
-			
-			
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		try (FileInputStream in = (FileInputStream) new FileInputStream(rootProject+File.separator+"config"+File.separator+"keyboards"+
-				File.separator+"AZERTY_CtrlMod.properties");) {
+
+		try (FileInputStream in = (FileInputStream) new FileInputStream(rootProject + File.separator + "config"
+				+ File.separator + "keyboards" + File.separator + "AZERTY_CtrlMod.properties");) {
 			propsCtrlMod.clear();
 			propsCtrlMod.load(in);
 			propsCtrlMod_INV.clear();
 			Set<Object> set = propsCtrlMod.keySet();
 			Iterator<Object> it = set.iterator();
-			while(it.hasNext()){
-				String key=(String)it.next();
-				propsCtrlMod_INV.put(propsTrad.get(key),key);
+			while (it.hasNext()) {
+				String key = (String) it.next();
+				propsCtrlMod_INV.put(propsTrad.get(key), key);
 			}
 			shutdownKey1 = propsTrad.getProperty("ALT", "ALT");
 			shutdownKey2 = propsTrad.getProperty("CTRL_L", "CTRL_L");
@@ -342,7 +343,7 @@ public class Main extends Application {
 			shutdownKey[0] = shutdownKey1;
 			shutdownKey[1] = shutdownKey2;
 			shutdownKey[2] = shutdownKey3;
-			
+
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -351,80 +352,77 @@ public class Main extends Application {
 			e1.printStackTrace();
 		}
 		Properties tmpProps = new Properties();
-		
+
 		cbKb.setOnAction((event) -> {
 			keyboard = cbKb.getSelectionModel().getSelectedItem();
 			System.out.println("Change keyBoard to :" + keyboard);
-			primaryStage.setTitle(version + " ; keyboard="+keyboard+" ; os="+osCurrent+ " ; lang="+language);
+			primaryStage.setTitle(version + " ; keyboard=" + keyboard + " ; os=" + osCurrent + " ; lang=" + language);
 			// modifKeys
-		
-				
+
 		});
-		
-		ObservableList<String> optionsTrad =  getOptions("trad");
+
+		ObservableList<String> optionsTrad = getOptions("trad");
 		cbLang.setItems(optionsTrad);
-		Label lbLang=new Label("     Lang :");
+		Label lbLang = new Label("     Lang :");
 		lbOs.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
 
 		cbLang.getSelectionModel().select("FR_fr");
 		cbLang.setOnAction((event) -> {
 			language = cbLang.getSelectionModel().getSelectedItem();
-			System.out.println("Change language to :" +language);
-			primaryStage.setTitle(version + " ; keyboard="+keyboard+" ; os="+osCurrent+ " ; lang="+language);
+			System.out.println("Change language to :" + language);
+			primaryStage.setTitle(version + " ; keyboard=" + keyboard + " ; os=" + osCurrent + " ; lang=" + language);
 			// modifKeys
-			
-				try (InputStream in = new FileInputStream(rootProject+File.separator+"config"+File.separator+"keyboards"+File.separator+ 
-						language+"_Trad.properties");) {
-					propsTrad.clear();
-					propsTrad.load(in);
-					
-					
-					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+
+			try (InputStream in = new FileInputStream(rootProject + File.separator + "config" + File.separator
+					+ "keyboards" + File.separator + language + "_Trad.properties");) {
+				propsTrad.clear();
+				propsTrad.load(in);
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			try (InputStream in = new FileInputStream(rootProject + File.separator + "config" + File.separator
+					+ "keyboards" + File.separator + keyboard + "_CtrlMod.properties");) {
+
+				propsCtrlMod.clear();
+				propsCtrlMod.load(in);
+				propsCtrlMod_INV.clear();
+				Set<Object> set = propsCtrlMod.keySet();
+				Iterator<Object> it = set.iterator();
+				while (it.hasNext()) {
+					String key = (String) it.next();
+					System.out.println("key =" + key);
+					;
+					propsCtrlMod_INV.put(propsTrad.get(key), key);
 				}
+				Set<Object> set2 = propsCtrlMod_INV.keySet();
+				shutdownKey1 = propsTrad.getProperty("ALT", "ALT");
+				shutdownKey2 = propsTrad.getProperty("CTRL_L", "CTRL_L");
+				shutdownKey3 = "F";
 
-				try (InputStream in = new FileInputStream(rootProject+File.separator+"config"+File.separator+"keyboards"+File.separator+ 
-						keyboard+"_CtrlMod.properties");) {
-					
-					propsCtrlMod.clear();
-					propsCtrlMod.load(in);
-					propsCtrlMod_INV.clear();
-					Set<Object> set = propsCtrlMod.keySet();
-					Iterator<Object> it = set.iterator();
-					while(it.hasNext()){
-						String key=(String)it.next();
-						System.out.println("key ="+key);;
-						propsCtrlMod_INV.put(propsTrad.get(key),key);
-					}
-					Set<Object> set2 = propsCtrlMod_INV.keySet();
-					shutdownKey1 = propsTrad.getProperty("ALT", "ALT");
-					shutdownKey2 = propsTrad.getProperty("CTRL_L", "CTRL_L");
-					shutdownKey3 = "F";
-					
-					
-					modifKeys = Arrays.copyOf(set2.toArray(), set2.toArray().length, String[].class);
+				modifKeys = Arrays.copyOf(set2.toArray(), set2.toArray().length, String[].class);
 
-					optionsModifKeys = (ObservableList<String>) FXCollections.observableArrayList(modifKeys);
-					cbModifKeys1.setItems(null);
-					cbModifKeys2.setItems(null);
+				optionsModifKeys = (ObservableList<String>) FXCollections.observableArrayList(modifKeys);
+				cbModifKeys1.setItems(null);
+				cbModifKeys2.setItems(null);
 
-					cbModifKeys1.setItems(optionsModifKeys);
-					cbModifKeys2.setItems(optionsModifKeys);
-					cbModifKeys1.setValue(shutdownKey1);
-					cbModifKeys2.setValue(shutdownKey2);
-					shutdownKey[0] = shutdownKey1;
-					shutdownKey[1] = shutdownKey2;
-					shutdownKey[2] = shutdownKey3;
-					
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				cbModifKeys1.setItems(optionsModifKeys);
+				cbModifKeys2.setItems(optionsModifKeys);
+				cbModifKeys1.setValue(shutdownKey1);
+				cbModifKeys2.setValue(shutdownKey2);
+				shutdownKey[0] = shutdownKey1;
+				shutdownKey[1] = shutdownKey2;
+				shutdownKey[2] = shutdownKey3;
+
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 
 		});
 		osKeyboradHbox.setSpacing(30.0);
@@ -618,8 +616,7 @@ public class Main extends Application {
 		hbMobileMouse.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;" + "-fx-border-width: 2;"
 				+ "-fx-border-insets: 5;" + "-fx-border-radius: 5;" + "-fx-border-color: blue;");
 		hbMobileMouse.setVisible(false);
-		
-		
+
 		// Combinaison de fin de programme
 		VBox vbox = new VBox();
 		Label lbShutdown = new Label(" Two Controls and a letter to stop spying ");
@@ -679,13 +676,41 @@ public class Main extends Application {
 		withSounds
 				.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
 		withSounds.setPrefWidth(150);
-		
+
 		withImgKeyboard.setSelected(false);
 		withImgKeyboard
 				.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
 		withImgKeyboard.setPrefWidth(250);
+
 		hbSounds.getChildren().add(withSounds);
 		hbSounds.getChildren().add(withImgKeyboard);
+		Label lbSizeKb = new Label(" Size of Keyboard :  ");
+
+		lbSizeKb.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
+		ObservableList<String> optionsSizeKb = (ObservableList<String>) FXCollections.observableArrayList("Normal",
+				"Medium", "Small");
+		cbSizeKb.setItems(optionsSizeKb);
+		cbSizeKb.getSelectionModel().select("Normal");
+		cbSizeKb.setOnAction((event) -> {
+			sizeKb = cbSizeKb.getSelectionModel().getSelectedItem();
+			System.out.println("Change size of Keyboard :" + sizeKb);
+			switch (sizeKb) {
+			case "Normal":
+				Main.kbScale=1.0;
+				break;
+			case "Medium" :
+				Main.kbScale=0.75;
+				break;
+			case "Small" :
+				Main.kbScale=0.5;
+
+			}
+		});
+
+		
+
+		hbSounds.getChildren().add(lbSizeKb);
+		hbSounds.getChildren().add(cbSizeKb);
 		// Fin gestion Sounds
 
 		root.getStylesheets().add(Main.STYLECSS.toExternalForm());
@@ -694,18 +719,17 @@ public class Main extends Application {
 		AnchorPane.setLeftAnchor(btnRun, 100.0);
 		AnchorPane.setRightAnchor(btnCancel, 100.0);
 		AnchorPane.setRightAnchor(btnMap, 250.0);
-		
+
 		AnchorPane.setBottomAnchor(btnRun, 10.0);
 		AnchorPane.setBottomAnchor(btnCancel, 10.0);
 		AnchorPane.setBottomAnchor(btnMap, 10.0);
-		
+
 		root.getChildren().add(btnRun);
 		root.getChildren().add(btnMap);
 		root.getChildren().add(btnCancel);
-		
+
 		AnchorPane.setTopAnchor(osKeyboradHbox, 10.0);
 		root.getChildren().add(osKeyboradHbox);
-		
 
 		AnchorPane.setTopAnchor(hbSizeScreen, 50.0);
 		AnchorPane.setTopAnchor(hbSizeMouse, 100.0);
@@ -726,14 +750,14 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		scene.setFill(null);
 
-		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
+		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 
 			@Override
 			public void handle(WindowEvent event) {
 				// TODO Auto-generated method stub
 				System.exit(0);
 			}
-			
+
 		});
 		primaryStage.setAlwaysOnTop(true);
 		primaryStage.show();
@@ -741,57 +765,58 @@ public class Main extends Application {
 	}
 
 	private ObservableList<String> getOptions(String forwhat) {
-		String repKeyboards= repCfg+File.separator+"keyboards"+File.separator;
-		switch (forwhat){
-		
-		
-		
-		case "keyboards" :
+		String repKeyboards = repCfg + File.separator + "keyboards" + File.separator;
+		switch (forwhat) {
+
+		case "keyboards":
 			try {
-				ArrayList<String> arr=new ArrayList<String>();
-				Stream<Path> stream=Files.list(new File(repKeyboards).toPath()).filter(( f) -> {
-					if ( f.toFile().getName().contains("Code"))
-						return true; else return false;});
-				
-				stream.forEach(str -> {
-					
-				arr.add(	str.toFile().getName().split("_Code")[0]);
-				
-				
+				ArrayList<String> arr = new ArrayList<String>();
+				Stream<Path> stream = Files.list(new File(repKeyboards).toPath()).filter((f) -> {
+					if (f.toFile().getName().contains("Code"))
+						return true;
+					else
+						return false;
 				});
-				String[] tabStr=(String[]) arr.stream().toArray(String[]::new);
-				
-				return FXCollections.observableArrayList(tabStr); 
+
+				stream.forEach(str -> {
+
+					arr.add(str.toFile().getName().split("_Code")[0]);
+
+				});
+				String[] tabStr = (String[]) arr.stream().toArray(String[]::new);
+
+				return FXCollections.observableArrayList(tabStr);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
-			
-		case "trad" :
+
+		case "trad":
 			try {
-				ArrayList<String> arr=new ArrayList<String>();
-				Stream<Path> stream=Files.list(new File(repKeyboards).toPath()).filter(( f) -> {
-					if ( f.toFile().getName().contains("Trad"))
-						return true; else return false;});
-				
-				stream.forEach(str -> {
-					
-				arr.add(	str.toFile().getName().split("_Trad")[0]);
-				
-				
+				ArrayList<String> arr = new ArrayList<String>();
+				Stream<Path> stream = Files.list(new File(repKeyboards).toPath()).filter((f) -> {
+					if (f.toFile().getName().contains("Trad"))
+						return true;
+					else
+						return false;
 				});
-				String[] tabStr=(String[]) arr.stream().toArray(String[]::new);
-				
-				return FXCollections.observableArrayList(tabStr); 
+
+				stream.forEach(str -> {
+
+					arr.add(str.toFile().getName().split("_Trad")[0]);
+
+				});
+				String[] tabStr = (String[]) arr.stream().toArray(String[]::new);
+
+				return FXCollections.observableArrayList(tabStr);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			break;
-		
-		
+
 		}
 
 		return null;
@@ -801,7 +826,7 @@ public class Main extends Application {
 		rootProject = System.getProperty("root", ".");
 		System.out.println("root=" + rootProject);
 		try {
-			STYLECSS=new File(rootProject+File.separator+"config"+File.separator+"style.css").toURI().toURL();
+			STYLECSS = new File(rootProject + File.separator + "config" + File.separator + "style.css").toURI().toURL();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

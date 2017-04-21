@@ -56,7 +56,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 	public static boolean boolRed1 = false;
 	public static boolean boolRed2 = false;
 	public HashMap<Integer, ImageView> hmPressed = new HashMap<Integer, ImageView>();
-	public boolean shiftPressed=false;
+	public boolean shiftPressed = false;
 
 	public Stage getPrimaryStage() {
 		return primaryStage;
@@ -97,7 +97,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		btnMove.setStyle(" -fx-background-color: black;" + "-fx-background-radius: 15em; " + "-fx-min-width: 10px; "
 				+ "-fx-min-height: 10px; " + "-fx-max-width: 10px; " + "-fx-max-height: 10px;");
 
-		scene = new Scene(root, 800, 275);
+		scene = new Scene(root, 800*Main.kbScale, 275*Main.kbScale);
 		root.setStyle("-fx-background-color: transparent");
 		btnMove.setOnMouseReleased(new EventHandler<MouseEvent>() {
 
@@ -129,8 +129,18 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		// Chargement des images
 		URL imageURL;
 		try {
-			imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
-					+ File.separator + "keyboards" + File.separator + Main.keyboard + ".png").toURI().toURL();
+			if (Main.kbScale == 1.0) {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + Main.keyboard + ".png").toURI().toURL();
+			}
+			else if (Main.kbScale == 0.5)  {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + Main.keyboard + "_S.png").toURI().toURL();
+			}
+			else { // image 3/4
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + Main.keyboard + "_M.png").toURI().toURL();
+			}
 			imKeyboard = new Image(imageURL.toExternalForm());
 
 			ivKeyboard = new ImageView(imKeyboard);
@@ -140,8 +150,13 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			e.printStackTrace();
 		}
 		try {
-			imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
-					+ File.separator + "keyboards" + File.separator + "blue1.png").toURI().toURL();
+			if (Main.kbScale == 1.0) {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "blue1.png").toURI().toURL();
+			} else {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "blue1_S.png").toURI().toURL();
+			}
 			imBlue1 = new Image(imageURL.toExternalForm());
 
 			ivBlue1 = new ImageView(imBlue1);
@@ -151,8 +166,13 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			e.printStackTrace();
 		}
 		try {
-			imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
-					+ File.separator + "keyboards" + File.separator + "red1.png").toURI().toURL();
+			if (Main.kbScale == 1.0) {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "red1.png").toURI().toURL();
+			} else {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "red1_S.png").toURI().toURL();
+			}
 			imRed1 = new Image(imageURL.toExternalForm());
 
 			ivRed1 = new ImageView(imRed1);
@@ -162,8 +182,13 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			e.printStackTrace();
 		}
 		try {
-			imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
-					+ File.separator + "keyboards" + File.separator + "red2.png").toURI().toURL();
+			if (Main.kbScale == 1.0) {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "red2.png").toURI().toURL();
+			} else {
+				imageURL = new File(Main.rootProject + File.separator + "config" + File.separator + "images"
+						+ File.separator + "keyboards" + File.separator + "red2_S.png").toURI().toURL();
+			}
 			imRed2 = new Image(imageURL.toExternalForm());
 
 			ivRed2 = new ImageView(imRed2);
@@ -174,8 +199,8 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		}
 		root.getChildren().add(ivKeyboard);
 
-		AnchorPane.setTopAnchor(btnMove, 250.0);
-		AnchorPane.setLeftAnchor(btnMove, 350.0);
+		AnchorPane.setTopAnchor(btnMove, 250.0*Main.kbScale);
+		AnchorPane.setLeftAnchor(btnMove, 350.0*Main.kbScale);
 
 		root.getChildren().add(btnMove);
 		stage.setAlwaysOnTop(true);
@@ -230,18 +255,19 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		// on verifie que la touche n'est pas shift, ctrl ou AltGr
 		switch (code) {
 		case 29:
-			
+
 			// Ctrl G mod =2 CtrlD mod=32
 		case 42:
 			// shift G
-			if( code == 42 || code == 3638) shiftPressed=true;  
+			if (code == 42 || code == 3638)
+				shiftPressed = true;
 		case 3638:
 			// shift D
-			if( code == 42 || code == 3638) shiftPressed=true; 
+			if (code == 42 || code == 3638)
+				shiftPressed = true;
 		case 56:
 			// Alt Modif 8 56_8
 			// Alt Gr modif 130 56_130
-			
 
 			String XY = this.propsKeyboardPosition.getProperty(Integer.toString(code) + "_" + modifiers);
 			if (null != XY && XY.matches(pat)) {
@@ -254,11 +280,11 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 						// System.out.println("code="+code+ " ;
 						// modifiers="+modifiers);;
 
-						absc = Integer.parseInt(XY.split("_")[0]) - 15; // image
-																		// is
-																		// 30*30
-																		// px
-						ord = Integer.parseInt(XY.split("_")[1]) - 15;
+						absc = (int) ((Integer.parseInt(XY.split("_")[0]) - 15) * Main.kbScale); // image
+						// is
+						// 30*30
+						// px
+						ord = (int) ((Integer.parseInt(XY.split("_")[1]) - 15) * Main.kbScale);
 						if (!boolRed1) {
 							AnchorPane.setTopAnchor(ivRed1, (double) ord);
 							AnchorPane.setLeftAnchor(ivRed1, (double) absc);
@@ -272,8 +298,8 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 							root.getChildren().remove(ivRed2);
 							root.getChildren().add(ivRed2);
 							hmPressed.put(code, ivRed2);
-							System.out.println("shiftPressed = "+shiftPressed);
-							if (modifiers >= 128 && modifiers < 140 && !shiftPressed ) {
+							//System.out.println("shiftPressed = " + shiftPressed);
+							if (modifiers >= 128 && modifiers < 140 && !shiftPressed) {
 								Integer in = getKeyFromValue(hmPressed, ivRed1);
 								hmPressed.remove(in);
 								root.getChildren().remove(ivRed1);
@@ -292,22 +318,24 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			// toutes les aures touches
 			XY = this.propsKeyboardPosition.getProperty(Integer.toString(code) + "_0");
 			if (null != XY && XY.matches(pat)) {
-			Platform.runLater(new Runnable() {
+				Platform.runLater(new Runnable() {
 
-				@Override
-				public void run() {
-					int absc = 0;
-					int ord = 0;
-					absc = Integer.parseInt(XY.split("_")[0]) - 15; // image is
-																	// 30*30 px
-					ord = Integer.parseInt(XY.split("_")[1]) - 15;
-					AnchorPane.setTopAnchor(ivBlue1, (double) ord);
-					AnchorPane.setLeftAnchor(ivBlue1, (double) absc);
-					root.getChildren().remove(ivBlue1);
-					root.getChildren().add(ivBlue1);
-					hmPressed.put(code, ivBlue1);
-				}
-			});
+					@Override
+					public void run() {
+						int absc = 0;
+						int ord = 0;
+						absc = (int) ((Integer.parseInt(XY.split("_")[0]) - 15) * Main.kbScale); // image
+						// is
+						// 30*30
+						// px
+						ord = (int) ((Integer.parseInt(XY.split("_")[1]) - 15) * Main.kbScale);
+						AnchorPane.setTopAnchor(ivBlue1, (double) ord);
+						AnchorPane.setLeftAnchor(ivBlue1, (double) absc);
+						root.getChildren().remove(ivBlue1);
+						root.getChildren().add(ivBlue1);
+						hmPressed.put(code, ivBlue1);
+					}
+				});
 			}
 			break;
 		}
@@ -331,7 +359,8 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 			@Override
 			public void run() {
 				int code = arg0.getKeyCode();
-				if (code == 42 || code == 3638) shiftPressed=false;
+				if (code == 42 || code == 3638)
+					shiftPressed = false;
 
 				if (hmPressed.containsKey(code)) {
 
@@ -389,8 +418,8 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 							" -fx-background-color: black;" + "-fx-background-radius: 15em; " + "-fx-min-width: 10px; "
 									+ "-fx-min-height: 10px; " + "-fx-max-width: 10px; " + "-fx-max-height: 10px;");
 
-					double X = Math.abs(Math.min(Main.screenWidth - 800, nativeEvent.getPoint().getX()));
-					double Y = Math.abs(Math.min(Main.screenHeigh - 275, nativeEvent.getPoint().getY()));
+					double X = Math.abs(Math.min(Main.screenWidth - (800 * Main.kbScale), nativeEvent.getPoint().getX()));
+					double Y = Math.abs(Math.min(Main.screenHeigh - ( 275 * Main.kbScale) , nativeEvent.getPoint().getY()));
 					primaryStage.setX(X);
 					primaryStage.setY(Y);
 
