@@ -7,7 +7,7 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170216;16525459">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170410;19125129">
+	<META NAME="CHANGED" CONTENT="20170421;17490007">
 	<STYLE TYPE="text/css">
 	<!--
 		H2.cjk { font-family: "SimSun" }
@@ -46,29 +46,31 @@ deviations from the Windows / AZERTY mapping .</SPAN>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P STYLE="margin-bottom: 0cm"><SPAN LANG="en-GB">This software is
-based on the Library </SPAN><SPAN LANG="en-GB"><B>JNativeHook</B></SPAN><SPAN LANG="en-GB">
-available at Github site : <A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></SPAN></P>
+based on the Library </SPAN><SPAN LANG="en-GB"><B>JNativeHook</B></SPAN>
+<SPAN LANG="en-GB">available at Github site :
+<A HREF="https://github.com/kwhat/jnativehook">https://github.com/kwhat/jnativehook</A></SPAN></P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm">The binary code is avaible
 on Maven Repo, I use the Version 2.1.0 : 
 </P>
 <P><A HREF="https://mvnrepository.com/artifact/com.1stleg/jnativehook/2.1.0">https://mvnrepository.com/artifact/com.1stleg/jnativehook/2.1.0</A></P>
-<P><BR><BR>
-</P>
 <H2 CLASS="western"><A NAME="result_box2"></A><SPAN LANG="en">An
 overview of the product on this document</SPAN> 
 </H2>
-<P><BR><BR>
-</P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box3"></A><SPAN LANG="en">The
+<P STYLE="margin-bottom: 0cm"><A NAME="result_box3"></A><SPAN LANG="en">The
 launch screen, which will be explained in detail later in the
-document</SPAN> .</P>
-<P ALIGN=CENTER><IMG SRC="readme_md_m4e821cd3.jpg" NAME="images1" ALIGN=BOTTOM WIDTH=605 HEIGHT=377 BORDER=0></P>
+document</SPAN><SPAN LANG="en-GB"> .</SPAN></P>
+<P ALIGN=CENTER><BR><BR>
+</P>
 <P><BR><BR>
 </P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm; page-break-before: always"><A NAME="result_box4"></A>
-<SPAN LANG="en">An image of the product in action:</SPAN> 
+<P LANG="en-GB" ALIGN=CENTER STYLE="margin-bottom: 0cm; page-break-before: always"><A NAME="result_box4"></A>
+<IMG SRC="readme_md_m665efb61.jpg" NAME="images1" ALIGN=BOTTOM WIDTH=603 HEIGHT=377 BORDER=0></P>
+<P LANG="en-GB" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" STYLE="margin-bottom: 0cm"><SPAN LANG="en">An image
+of the product in action:</SPAN> 
 </P>
 <P ALIGN=CENTER><IMG SRC="readme_md_m213e1b26.jpg" NAME="images2" ALIGN=BOTTOM WIDTH=642 HEIGHT=366 BORDER=0></P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box5"></A><SPAN LANG="en">We
@@ -79,8 +81,8 @@ see a blue round on the Print-Screen key when I made the screenshot!</SPAN>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box6"></A><SPAN LANG="en">You
 can choose whether to display the keyboard or not, you can activate
 the sound that describes the actions performed on the mouse and
-keyboard.</SPAN> 
-</P>
+keyboard.</SPAN> There 3 sizes for the image of the Keyboard (
+Normal, Medium, Small), usefull for learnig keystroke to beginners.</P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><SPAN LANG="en">For the
@@ -158,7 +160,7 @@ Virtual Machine version greater than 1.8.0_121.<BR>The 32-bit JRE
 version can be installed from the Oracle site:</SPAN> 
 </P>
 <P><A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html"><SPAN LANG="en-GB">http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</SPAN></A></P>
-<P><IMG SRC="readme_md_21cfed0d.jpg" NAME="images3" ALIGN=BOTTOM WIDTH=465 HEIGHT=214 BORDER=0></P>
+<P ALIGN=CENTER><IMG SRC="readme_md_21cfed0d.jpg" NAME="images3" ALIGN=BOTTOM WIDTH=465 HEIGHT=214 BORDER=0></P>
 <P LANG="en-GB">Check the acceptation of the License.</P>
 <P><BR><BR>
 </P>
@@ -169,8 +171,8 @@ download (i586)</P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><SPAN LANG="en"><BR>After
 downloading, it will be necessary to launch the corresponding .exe
 file in administrator mode (right click on the file, and choose
-launch in administrator mode).</SPAN> 
-</P>
+launch in administrator mode).</SPAN> The version must be the last
+available version on Oracle site.</P>
 <P><BR><BR>
 </P>
 <P><BR><BR>
@@ -188,13 +190,14 @@ shown below:</SPAN>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box23"></A>
 <SPAN LANG="en"><SPAN STYLE="font-weight: normal">The product is in
 the form of a zip whatido archive &lt;Version&gt; Exe.zip ex
-whatido3Exe.zip.</SPAN></SPAN> 
-</P>
-<P><BR><BR>
+</SPAN></SPAN><SPAN LANG="en"><B>whatido3Exe.zip</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
+this archive is available at the root of
+<A HREF="https://github.com/PASTJL/whatido3">https://github.com/PASTJL/whatido3</A></SPAN></SPAN></P>
+<P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box24"></A>
 <SPAN LANG="en"><SPAN STYLE="font-weight: normal">We assume for the
-rest of the installation that there is a C: \ opt directory on your
+rest of the installation that there is a C: \opt directory on your
 computer, otherwise you will create it or you will adapt the
 procedure described below.</SPAN></SPAN> 
 </P>
@@ -203,12 +206,14 @@ procedure described below.</SPAN></SPAN>
 <UL>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box25"></A>
 	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Position the
-	whatido3Exe.zip archive under C: \ opt and unzip</SPAN></SPAN> 
+	whatido3Exe.zip archive under C:\opt and unzip</SPAN></SPAN> 
 	</P>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box26"></A>
-	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file C: \
-	opt \ whatido \ script \ whatido.cmd and adapt paths to red</SPAN></SPAN>
-		</P>
+	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file
+	</SPAN></SPAN><SPAN LANG="en"><B>C:\opt\whatido\script\whatido.cmd</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
+	and adapt paths to red</SPAN></SPAN> 
+	</P>
+	<P LANG="en-GB" STYLE="margin-bottom: 0cm"></P>
 </UL>
 <P LANG="en-GB" STYLE="margin-left: 1.25cm; background: #ccffff"><FONT FACE="Consolas, monospace"><FONT SIZE=2><SPAN STYLE="font-weight: normal">Set
 PROJECT_HOME=</SPAN><FONT COLOR="#ff0000"><B>C:\opt\whatido</B></FONT></FONT></FONT></P>
@@ -226,9 +231,9 @@ JAVA_HOME=C:\Program Files (x86)\Java\</SPAN><FONT COLOR="#ff0000"><B>jre1.8.0_1
 <FONT FACE="Consolas, monospace"><FONT SIZE=2>Exit</FONT></FONT></P>
 <UL>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box27"></A>
-	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file C: \
-	opt \ whatido \ script \ testingMouseKeyBoard.cmd and adapt paths to
-	red</SPAN></SPAN> 
+	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file </SPAN></SPAN><SPAN LANG="en"><B>C:\
+	opt\whatido\script\testingMouseKeyBoard.cmd</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
+	and adapt paths to red</SPAN></SPAN> 
 	</P>
 </UL>
 <P LANG="en-GB" STYLE="margin-left: 2.5cm; background: #ccffff; page-break-before: always">
@@ -247,8 +252,8 @@ com.jlp.whatido.MyMouseKeyboardListener </FONT></FONT>
 <UL>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm; background: transparent"><A NAME="result_box28"></A>
 	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en"><SPAN STYLE="font-weight: normal">Make
-	a shortcut on the desktop for the file</SPAN></SPAN> <SPAN LANG="en"><B>C:
-	\ opt \ whatido \ script \ whatido.cmd</B></SPAN> </FONT></FONT>
+	a shortcut on the desktop for the file</SPAN></SPAN>
+	<SPAN LANG="en"><B>C:\opt\whatido\script\whatido.cmd</B></SPAN> </FONT></FONT>
 	</P>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm; background: transparent"><A NAME="result_box29"></A>
 	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en"><SPAN STYLE="font-weight: normal">Click

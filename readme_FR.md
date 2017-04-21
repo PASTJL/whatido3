@@ -7,7 +7,7 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170408;9383251">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170410;19133770">
+	<META NAME="CHANGED" CONTENT="20170421;17544567">
 	<STYLE TYPE="text/css">
 	<!--
 		H2.cjk { font-family: "SimSun" }
@@ -46,7 +46,7 @@ d&eacute;pot Maven , j'ai utilis&eacute; la Version 2.1.0 :
 <H2 CLASS="western">Un aper&ccedil;u du produit sur ce document</H2>
 <P>L'&eacute;cran de lancement qui sera expliqu&eacute; en d&eacute;tail
 plus loin dans le document.</P>
-<P ALIGN=CENTER><IMG SRC="readme_FR_md_4d33c67.jpg" NAME="images1" ALIGN=BOTTOM WIDTH=605 HEIGHT=377 BORDER=0></P>
+<P ALIGN=CENTER><IMG SRC="readme_FR_md_m665efb61.jpg" NAME="images1" ALIGN=BOTTOM WIDTH=603 HEIGHT=377 BORDER=0></P>
 <P><BR><BR>
 </P>
 <P STYLE="page-break-before: always">Une image du produit en action&nbsp;:</P>
@@ -55,7 +55,9 @@ plus loin dans le document.</P>
 j'ai fait la copie d'&eacute;cran&nbsp;!</P>
 <P LANG="fr-FR">On peut choisir l'affichage ou non du clavier, on
 peut activer le son qui d&eacute;crit les actions faites sur la
-souris et le clavier.</P>
+souris et le clavier. Pour le clavier on dispose de 3 tailles (
+Normal, Medium, Small), utile pour l'apprentissage du clavier aux
+d&eacute;butants .</P>
 <P LANG="fr-FR">Pour ce qui concerne la souris, on a 4 tailles au
 choix ( Large, Medium, Small, Tiny) et le fait d&rsquo;&ecirc;tre
 mobile pour les 3 plus petites tailles et d'&ecirc;tre fixe pour les
@@ -101,12 +103,15 @@ virtuelle <B>Java </B>r&eacute;cente version sup&eacute;rieure &agrave;
 <B>1.8.0_121</B>.</P>
 <P>On pourra installer la version <B>JRE 32 bits</B> depuis le site
 de <B>Oracle</B>&nbsp;:</P>
-<P><A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</A><IMG SRC="readme_FR_md_m464ab979.jpg" NAME="images3" ALIGN=BOTTOM WIDTH=465 HEIGHT=214 BORDER=0></P>
-<P>Cocher l'acceptation de licence.</P>
-<P><IMG SRC="readme_FR_md_m7cfa0b96.jpg" NAME="images4" ALIGN=BOTTOM WIDTH=571 HEIGHT=358 BORDER=0></P>
-<P LANG="fr-FR">Choisir le t&eacute;l&eacute;chargement de la version
-32 bits ( i586) 
+<P><A HREF="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html</A></P>
+<P ALIGN=CENTER><IMG SRC="readme_FR_md_m464ab979.jpg" NAME="images3" ALIGN=BOTTOM WIDTH=465 HEIGHT=214 BORDER=0></P>
+<P><BR><BR>
 </P>
+<P>Cocher l'acceptation de licence.</P>
+<P ALIGN=CENTER><IMG SRC="readme_FR_md_m7cfa0b96.jpg" NAME="images4" ALIGN=BOTTOM WIDTH=571 HEIGHT=358 BORDER=0></P>
+<P LANG="fr-FR">Choisir le t&eacute;l&eacute;chargement de la version
+32 bits ( i586) . La version &agrave; t&eacute;l&eacute;charger sur
+le site de Oracle doit &ecirc;tre la plus r&eacute;cente.</P>
 <P><SPAN LANG="fr-FR">Apr&egrave;s t&eacute;l&eacute;chargement, il
 faudra lancer le </SPAN><SPAN LANG="fr-FR"><B>fichier .exe
 correspondant en mode administrateur</B></SPAN> <SPAN LANG="fr-FR">(
@@ -119,7 +124,9 @@ votre JRE comme montr&eacute; ci-dessous&nbsp;:</P>
 </P>
 <H2 CLASS="western">Installation de Whatido</H2>
 <P>Le produit se pr&eacute;sente sous la forme d'une archive zip
-<B>whatido&lt;Version&gt;Exe.zip</B> ex <B>whatido3Exe.zip </B><SPAN STYLE="font-weight: normal">.</SPAN></P>
+<B>whatido&lt;Version&gt;Exe.zip</B> ex <B>whatido3Exe.zip </B><SPAN STYLE="font-weight: normal">.
+Une archive au format zip est disponible sous la racine de :</SPAN></P>
+<P><A HREF="https://github.com/PASTJL/whatido3"><SPAN STYLE="font-weight: normal">https://github.com/PASTJL/whatido3</SPAN></A></P>
 <P><SPAN STYLE="font-weight: normal">On va supposer pour la suite de
 l'installation qu'il existe un r&eacute;pertoire </SPAN><B>C:\opt</B>
 <SPAN STYLE="font-weight: normal">sur votre ordinateur, sinon vous le
