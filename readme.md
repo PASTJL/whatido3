@@ -7,7 +7,8 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170216;16525459">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170421;17490007">
+	<META NAME="CHANGED" CONTENT="20170426;15085606">
+	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
 	<STYLE TYPE="text/css">
 	<!--
 		H2.cjk { font-family: "SimSun" }
@@ -60,14 +61,14 @@ overview of the product on this document</SPAN>
 </H2>
 <P STYLE="margin-bottom: 0cm"><A NAME="result_box3"></A><SPAN LANG="en">The
 launch screen, which will be explained in detail later in the
-document</SPAN><SPAN LANG="en-GB"> .</SPAN></P>
+document</SPAN> <SPAN LANG="en-GB">.</SPAN></P>
 <P ALIGN=CENTER><BR><BR>
 </P>
 <P><BR><BR>
 </P>
-<P LANG="en-GB" ALIGN=CENTER STYLE="margin-bottom: 0cm; page-break-before: always"><A NAME="result_box4"></A>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; page-break-before: always"><A NAME="result_box4"></A>
 <IMG SRC="readme_md_m665efb61.jpg" NAME="images1" ALIGN=BOTTOM WIDTH=603 HEIGHT=377 BORDER=0></P>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm"><BR>
+<P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><SPAN LANG="en">An image
 of the product in action:</SPAN> 
@@ -187,12 +188,11 @@ shown below:</SPAN>
 <P><BR><BR>
 </P>
 <H2 LANG="en-GB" CLASS="western">Installation of Whatido</H2>
-<P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box23"></A>
-<SPAN LANG="en"><SPAN STYLE="font-weight: normal">The product is in
-the form of a zip whatido archive &lt;Version&gt; Exe.zip ex
-</SPAN></SPAN><SPAN LANG="en"><B>whatido3Exe.zip</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
-this archive is available at the root of
-<A HREF="https://github.com/PASTJL/whatido3">https://github.com/PASTJL/whatido3</A></SPAN></SPAN></P>
+<P STYLE="margin-bottom: 0cm"><A NAME="result_box23"></A><SPAN LANG="en"><SPAN STYLE="font-weight: normal">The
+product is in the form of a zip whatido archive &lt;Version&gt;
+Exe.zip ex </SPAN></SPAN><SPAN LANG="en"><B>whatido3Exe.zip</B></SPAN><SPAN LANG="en-GB">
+</SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">this archive
+is available at the root of <A HREF="https://github.com/PASTJL/whatido3">https://github.com/PASTJL/whatido3</A></SPAN></SPAN></P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 <P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box24"></A>
@@ -210,10 +210,10 @@ procedure described below.</SPAN></SPAN>
 	</P>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box26"></A>
 	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file
-	</SPAN></SPAN><SPAN LANG="en"><B>C:\opt\whatido\script\whatido.cmd</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
-	and adapt paths to red</SPAN></SPAN> 
+	</SPAN></SPAN><SPAN LANG="en"><B>C:\opt\whatido\script\whatido.cmd</B></SPAN>
+	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">and adapt paths to
+	red</SPAN></SPAN> 
 	</P>
-	<P LANG="en-GB" STYLE="margin-bottom: 0cm"></P>
 </UL>
 <P LANG="en-GB" STYLE="margin-left: 1.25cm; background: #ccffff"><FONT FACE="Consolas, monospace"><FONT SIZE=2><SPAN STYLE="font-weight: normal">Set
 PROJECT_HOME=</SPAN><FONT COLOR="#ff0000"><B>C:\opt\whatido</B></FONT></FONT></FONT></P>
@@ -232,8 +232,8 @@ JAVA_HOME=C:\Program Files (x86)\Java\</SPAN><FONT COLOR="#ff0000"><B>jre1.8.0_1
 <UL>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm"><A NAME="result_box27"></A>
 	<SPAN LANG="en"><SPAN STYLE="font-weight: normal">Open the file </SPAN></SPAN><SPAN LANG="en"><B>C:\
-	opt\whatido\script\testingMouseKeyBoard.cmd</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
-	and adapt paths to red</SPAN></SPAN> 
+	opt\whatido\script\testingMouseKeyBoard.cmd</B></SPAN> <SPAN LANG="en"><SPAN STYLE="font-weight: normal">and
+	adapt paths to red</SPAN></SPAN> 
 	</P>
 </UL>
 <P LANG="en-GB" STYLE="margin-left: 2.5cm; background: #ccffff; page-break-before: always">
@@ -255,6 +255,11 @@ com.jlp.whatido.MyMouseKeyboardListener </FONT></FONT>
 	a shortcut on the desktop for the file</SPAN></SPAN>
 	<SPAN LANG="en"><B>C:\opt\whatido\script\whatido.cmd</B></SPAN> </FONT></FONT>
 	</P>
+	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm; background: transparent; font-weight: normal">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en"><SPAN STYLE="font-weight: normal">An
+	 icon  </SPAN></SPAN><SPAN LANG="en"><B>whatidoIco.ico</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
+	 is available in the folder  </SPAN></SPAN><SPAN LANG="en"><B>C:\opt\whatido\script\</B></SPAN><SPAN LANG="en"><SPAN STYLE="font-weight: normal">
+	to decorate the shortcut.</SPAN></SPAN></FONT></FONT></P>
 	<LI><P LANG="en-GB" STYLE="margin-bottom: 0cm; background: transparent"><A NAME="result_box29"></A>
 	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en"><SPAN STYLE="font-weight: normal">Click
 	on the shortcut to launch </SPAN></SPAN><SPAN LANG="en"><B>whatido.</B></SPAN>

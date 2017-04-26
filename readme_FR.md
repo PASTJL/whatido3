@@ -7,7 +7,8 @@
 	<META NAME="AUTHOR" CONTENT="Jean-Louis PASTUREL">
 	<META NAME="CREATED" CONTENT="20170408;9383251">
 	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
-	<META NAME="CHANGED" CONTENT="20170421;17544567">
+	<META NAME="CHANGED" CONTENT="20170426;15100372">
+	<META NAME="CHANGEDBY" CONTENT="Jean-Louis PASTUREL">
 	<STYLE TYPE="text/css">
 	<!--
 		H2.cjk { font-family: "SimSun" }
@@ -178,6 +179,10 @@ com.jlp.whatido.MyMouseKeyboardListener </FONT></FONT>
 	<LI><P STYLE="background: transparent"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">Faire
 	un raccourci sur le bureau pour le fichier
 	C:\opt\whatido\script\</SPAN><B>whatido.cmd</B></FONT></FONT></P>
+	<LI><P STYLE="background: transparent; font-weight: normal"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Une
+	ic&ocirc;ne<B> </B><B>whatidoIco.ico</B><B> </B>est fournie dans le
+	r&eacute;pertoire<B> </B><B>C:\opt\whatido\script\ </B>pour
+	illustrer le raccourci.</FONT></FONT></P>
 	<LI><P STYLE="background: transparent"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">Cliquer
 	sur le raccourci pour lancer</SPAN> <B>whatido.</B></FONT></FONT></P>
 </UL>
