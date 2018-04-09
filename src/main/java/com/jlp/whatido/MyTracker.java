@@ -348,6 +348,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 		//root.setStyle("-fx-background-color: transparent");
 		stage.setAlwaysOnTop(true);
 		stage.close();
+		
 		//scene.setFill(null);
 		scene.setFill(Color.TRANSPARENT);
 		

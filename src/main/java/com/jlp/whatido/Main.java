@@ -29,6 +29,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -72,13 +73,16 @@ public class Main extends Application {
 	public static String shutdownKey3;
 	public static int latency = 100;
 	public static String rootProject = ".";
+	@SuppressWarnings("restriction")
 	public static ObservableList<String> optionsModifKeys;
 	public static boolean boolSounds = false;
 	public static boolean boolKeyboard = false;
-	public static String version = " WhatIDo 1.3 : Tracking keyboard and mouse events!!!";
+	public static String version = " WhatIDo 3.0.1 : Tracking keyboard and mouse events!!!";
 	public static URL STYLECSS;
-
+public static boolean boolMouseTransparent=true;
+public static boolean boolKeyBoardTransparent=true;
 	// All Controls to retrieve the static Field
+	@SuppressWarnings("restriction")
 	public final TextField taOs = new TextField();
 	public final ComboBox<String> cbKb = new ComboBox<String>();
 	public final ComboBox<String> cbLang = new ComboBox<String>();
@@ -96,6 +100,8 @@ public class Main extends Application {
 	public final TextField tfLatency = new TextField();
 	public final CheckBox withSounds = new CheckBox(" With Sounds ?");
 	public final CheckBox withImgKeyboard = new CheckBox(" With Keyboard image ?");
+	public final CheckBox mouseTransparent=  new CheckBox(" With transparent mouse  ?");
+	public final CheckBox keyBoardTransparent=  new CheckBox(" With transparent keyboard ?");
 	public final ComboBox<String> cbSizeKb = new ComboBox<String>();
 	//public final CheckBox withImgKeyboardSmall = new CheckBox("Small size Keyboard ?");
 	public static double kbScale = 1;
@@ -129,6 +135,21 @@ public class Main extends Application {
 		} else {
 			boolKeyboard = false;
 		}
+		if (this.mouseTransparent.isSelected()) {
+		boolMouseTransparent=true;
+		}
+		else
+		{
+			boolMouseTransparent=false;
+		}
+		if (this.keyBoardTransparent.isSelected()) {
+			boolKeyBoardTransparent=true;
+			}
+			else
+			{
+				boolKeyBoardTransparent=false;
+			}
+		
 		props.setProperty("osCurrent", osCurrent);
 		props.setProperty("keyboard", keyboard);
 		props.setProperty("sizeMouse", sizeMouse);
@@ -211,7 +232,7 @@ public class Main extends Application {
 		// primaryStage.initStyle(StageStyle.TRANSPARENT);
 		repCfg = rootProject + File.separator + "config" + File.separator;
 		AnchorPane root = new AnchorPane();
-		Scene scene = new Scene(root, 700, 450);
+		Scene scene = new Scene(root, 800, 600);
 		Button btnRun = new Button();
 		btnRun.setText("Run");
 		Button btnCancel = new Button();
@@ -230,7 +251,14 @@ public class Main extends Application {
 						public void run() {
 							System.out.println("Lancement du thread Souris");
 							primaryStage.hide();
-							Stage stage = new Stage(StageStyle.TRANSPARENT);
+							Stage stage=null;
+							if (Main.boolMouseTransparent) {
+								stage = new Stage(StageStyle.TRANSPARENT);
+							}else
+							{
+								stage = new Stage(StageStyle.UNDECORATED);
+							}
+							
 							new MyTracker(stage);
 						}
 
@@ -245,7 +273,14 @@ public class Main extends Application {
 						public void run() {
 							System.out.println("Lancement du thread Souris");
 							primaryStage.hide();
-							Stage stage = new Stage(StageStyle.TRANSPARENT);
+							Stage stage=null;
+							if (Main.boolMouseTransparent) {
+								stage = new Stage(StageStyle.TRANSPARENT);
+							}else
+							{
+								stage = new Stage(StageStyle.UNDECORATED);
+							}
+							
 							new MyTracker(stage);
 						}
 
@@ -256,7 +291,13 @@ public class Main extends Application {
 						public void run() {
 							System.out.println("Lancement du thread clavier");
 							primaryStage.hide();
-							Stage stage = new Stage(StageStyle.TRANSPARENT);
+							Stage stage=null;
+							if (Main.boolKeyBoardTransparent) {
+								stage = new Stage(StageStyle.TRANSPARENT);
+							}else
+							{
+								stage = new Stage(StageStyle.UNDECORATED);
+							}
 							new MyKbTracker(stage);
 						}
 
@@ -575,6 +616,22 @@ public class Main extends Application {
 
 		hbSizeMouse.getChildren().add(lbMobilMouse);
 		hbSizeMouse.getChildren().add(cbMouseMobile);
+		// transparency mouse
+		HBox.setMargin(mouseTransparent, new Insets(0,0,0,20));
+		mouseTransparent
+		.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
+		mouseTransparent.setSelected(Main.boolMouseTransparent);
+		mouseTransparent.setOnAction(e -> {
+			if (mouseTransparent.isSelected()) {
+				Main.boolMouseTransparent=true;
+			}
+			else
+			{
+				Main.boolMouseTransparent=false;
+			}
+			
+		});
+		hbSizeMouse.getChildren().add(mouseTransparent);
 		hbSizeMouse.setVisible(true);
 		hbSizeMouse.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;" + "-fx-border-width: 2;"
 				+ "-fx-border-insets: 5;" + "-fx-border-radius: 5;" + "-fx-border-color: blue;");
@@ -711,6 +768,23 @@ public class Main extends Application {
 
 		hbSounds.getChildren().add(lbSizeKb);
 		hbSounds.getChildren().add(cbSizeKb);
+		
+		// keyBoard mouse
+				HBox.setMargin(keyBoardTransparent, new Insets(0,0,0,20));
+				keyBoardTransparent
+				.setStyle("-fx-text-fill : rgb(255,0,0);-fx-font-size: 11pt;" + "-fx-font-family: Segoe UI Semibold;");
+				keyBoardTransparent.setSelected(Main.boolKeyBoardTransparent);
+				keyBoardTransparent.setOnAction(e -> {
+					if (keyBoardTransparent.isSelected()) {
+						Main.boolKeyBoardTransparent=true;
+					}
+					else
+					{
+						Main.boolKeyBoardTransparent=false;
+					}
+					
+				});
+				hbSounds.getChildren().add(keyBoardTransparent);
 		// Fin gestion Sounds
 
 		root.getStylesheets().add(Main.STYLECSS.toExternalForm());
@@ -759,9 +833,11 @@ public class Main extends Application {
 			}
 
 		});
+		
 		primaryStage.setAlwaysOnTop(true);
 		primaryStage.show();
-
+		primaryStage.setMinWidth(hbSounds.getWidth()+40);
+		primaryStage.setMinHeight(500);
 	}
 
 	private ObservableList<String> getOptions(String forwhat) {

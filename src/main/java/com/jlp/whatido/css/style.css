@@ -1,7 +1,7 @@
-.root{
-                -fx-background-color: rgba(235, 235, 235, 0.5); 
-               
-        }
+
+.root {
+    -fx-background-color: transparent ;
+}       
 .label{
 	-fx-text-fill: rgb(255,0,0);
 	-fx-color : rgb(255,0,0);

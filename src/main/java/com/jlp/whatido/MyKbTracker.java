@@ -209,6 +209,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 		scene.setFill(Color.TRANSPARENT);
 		stage.setScene(scene);
 		stage.show();
+		stage.setAlwaysOnTop(true);
 		decalX = (double) (Main.screenWidth - 850);
 		decalY = (double) (Main.screenHeigh - 300);
 		stage.setX(Main.screenWidth - 850);
@@ -247,7 +248,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 
 	@Override
 	public void nativeKeyPressed(NativeKeyEvent arg0) {
-
+		
 		// recuperer le code et le modifier de la touche
 		int code = arg0.getKeyCode();
 		int modifiers = arg0.getModifiers() % 8192;
@@ -275,6 +276,7 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 
 					@Override
 					public void run() {
+						primaryStage.setAlwaysOnTop(true);
 						int absc = 0;
 						int ord = 0;
 						// System.out.println("code="+code+ " ;
@@ -354,10 +356,12 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 	@Override
 	public void nativeKeyReleased(NativeKeyEvent arg0) {
 		// TODO Auto-generated method stub
+		
 		Platform.runLater(new Runnable() {
 
 			@Override
 			public void run() {
+				primaryStage.setAlwaysOnTop(true);
 				int code = arg0.getKeyCode();
 				if (code == 42 || code == 3638)
 					shiftPressed = false;
@@ -399,12 +403,13 @@ public class MyKbTracker implements NativeKeyListener, NativeMouseInputListener 
 
 	@Override
 	public void nativeMousePressed(NativeMouseEvent nativeEvent) {
-
+		
 		// TODO Auto-generated method stub
 		Platform.runLater(new Runnable() {
 
 			@Override
 			public void run() {
+				primaryStage.setAlwaysOnTop(true);
 				// TODO Auto-generated method stub
 				try {
 					Thread.sleep(Main.latency);
