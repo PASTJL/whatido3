@@ -235,6 +235,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 				@Override
 				public void run() {
+					primaryStage.setAlwaysOnTop(true);
 					if (moveFixed) {
 
 						btnMove.setStyle(" -fx-background-color: black;" + "-fx-background-radius: 15em; "
@@ -480,6 +481,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 					@Override
 					public void run() {
+						primaryStage.setAlwaysOnTop(true);
 						if (moveFixed) {
 
 							btnMove.setStyle(" -fx-background-color: black;" + "-fx-background-radius: 15em; "
@@ -631,6 +633,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 					@Override
 					public void run() {
+						primaryStage.setAlwaysOnTop(true);
 						if (moveFixed) {
 
 							btnMove.setStyle(" -fx-background-color: black;" + "-fx-background-radius: 15em; "
@@ -805,7 +808,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 			@Override
 			public void run() {
-
+				primaryStage.setAlwaysOnTop(true);
 				// System .out.println ( "nativeEvent.getKeyCode() =
 				// "+nativeEvent.getKeyCode()+ " ; nativeEvent.getModifiers()
 				// ="+nativeEvent.getModifiers());
@@ -948,6 +951,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 			@Override
 			public void run() {
+				primaryStage.setAlwaysOnTop(true);
 				try {
 					Thread.sleep(Main.latency);
 				} catch (InterruptedException e) {
@@ -1004,6 +1008,13 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 		// TODO Auto-generated method stub
 		// System.out.println("Mouse Clicked Button=" +
 		// nativeEvent.getButton());
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				primaryStage.setAlwaysOnTop(true);
+			}
+		});
 	}
 
 	@Override
@@ -1016,7 +1027,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-
+				primaryStage.setAlwaysOnTop(true);
 				if (moveFixed) {
 
 					moveFixed = false;
@@ -1050,11 +1061,11 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 			break;
 		case "L":
 			Platform.runLater(new Runnable() {
-
+				
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-
+					primaryStage.setAlwaysOnTop(true);
 					root.getChildren().remove(0);
 					root.getChildren().add(0, ivMouseCLK_L);
 
@@ -1095,7 +1106,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-
+					primaryStage.setAlwaysOnTop(true);
 					root.getChildren().remove(0);
 					root.getChildren().add(0, ivMouseCLK_R);
 				}
@@ -1135,7 +1146,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-
+					primaryStage.setAlwaysOnTop(true);
 					root.getChildren().remove(0);
 					root.getChildren().add(0, ivMouseCLK_ROUL);
 				}
@@ -1182,7 +1193,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 			public void run() {
 				// TODO Auto-generated method stub
 
-				
+				primaryStage.setAlwaysOnTop(true);
 
 				 root.getChildren().remove(0);
 				 root.getChildren().add(0, ivMouseVide);
@@ -1206,7 +1217,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 				@Override
 				public void run() {
-
+					primaryStage.setAlwaysOnTop(true);
 					// TODO Auto-generated method stub
 
 					primaryStage.setX(nativeEvent.getPoint().getX() - calculDecalX(nativeEvent.getPoint().getX()));
@@ -1250,7 +1261,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 
 				@Override
 				public void run() {
-
+					primaryStage.setAlwaysOnTop(true);
 					// TODO Auto-generated method stub
 
 					primaryStage.setX(nativeEvent.getPoint().getX() - calculDecalX(nativeEvent.getPoint().getX()));
@@ -1275,7 +1286,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-
+					primaryStage.setAlwaysOnTop(true);
 					root.getChildren().remove(0);
 					root.getChildren().add(0, ivMouseVide);
 					root.getChildren().remove(0);
@@ -1321,7 +1332,7 @@ public class MyTracker implements NativeKeyListener, NativeMouseInputListener, N
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-
+					primaryStage.setAlwaysOnTop(true);
 					root.getChildren().remove(0);
 					root.getChildren().add(0, ivMouseVide);
 					root.getChildren().remove(0);
