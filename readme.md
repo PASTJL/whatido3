@@ -2,15 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 5.4.5.1 (Linux)"/>
-	<meta name="author" content="Jean-Louis PASTUREL"/>
-	<meta name="created" content="2017-02-16T00:00:00.016525459"/>
-	<meta name="changed" content="2018-03-28T08:34:50.995945786"/>
-	<style type="text/css">
-		h2.cjk { font-family: "SimSun" }
-		h2.ctl { font-family: "Lucida Sans" }
-	</style>
+
 </head>
 <body lang="fr-FR" dir="ltr">
 <p><br/>
